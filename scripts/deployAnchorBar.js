@@ -14,12 +14,14 @@ async function main() {
   // await hre.run('compile');
 
   // We get the contract to deploy
-  const AnchorToken = await hre.ethers.getContractFactory("AnchorToken");
-  const anchorToken = await AnchorToken.deploy();
+  const AnchorToken = await hre.ethers.getContractFactory("AnchorBar");
+  const anchorToken = await AnchorToken.deploy(
+    "0xfbe15636c846d022050e391fb69781e725775ec3"
+  );
 
   await anchorToken.deployed();
 
-  console.log("AnchorToken deployed to:", anchorToken.address);
+  console.log("AnchorBar deployed to:", anchorToken.address);
 }
 
 // We recommend this pattern to be able to use async/await everywhere
